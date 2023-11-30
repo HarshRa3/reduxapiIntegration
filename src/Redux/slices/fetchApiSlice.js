@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import axios from 'axios'
+import axios from '../axios'
 
 const initialState = {
   data:[],
@@ -15,7 +15,7 @@ const initialState = {
 })
 export const fetchData=()=> async (dispatch)=>{
     try{
-        let response = await axios.get('https://fakestoreapi.com/products')
+        let response = await axios.get('/products')
         dispatch(addData(response.data))
 
     }catch(e){
