@@ -8,9 +8,6 @@ import { Box } from "@mui/material";
 const App = () => {
   const dispatch=useDispatch()
   const data = useSelector((state) => state.fetchApiSlice.data)
-  
-  console.log(data)
-
   useEffect(() => {
     dispatch(fetchData())
   }, []);
